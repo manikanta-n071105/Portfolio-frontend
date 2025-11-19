@@ -1,0 +1,139 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(10, 14, 39, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 217, 255, 0.1);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 2px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-logo.hidden {
+  opacity: 0;
+  transform: translateX(-20px);
+  pointer-events: none;
+}
+
+.navbar-logo.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.navbar-menu li a {
+  color: var(--text-white);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-menu li a:hover {
+  color: var(--accent-cyan);
+}
+
+.navbar-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-cyan);
+  transition: width 0.3s ease;
+}
+
+.navbar-menu li a:hover::after {
+  width: 100%;
+}
+
+.cta-button {
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  border: none;
+  border-radius: 50px;
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 217, 255, 0.5);
+}
+
+@media (max-width: 968px) {
+  .navbar-menu {
+    gap: 1.5rem;
+  }
+  
+  .navbar-menu li a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+  
+  .navbar-container {
+    padding: 0 1rem;
+  }
+  
+  .navbar-logo {
+    font-size: 1.25rem;
+  }
+  
+  .navbar-menu {
+    display: none;
+  }
+  
+  .cta-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.1rem;
+  }
+  
+  .cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}

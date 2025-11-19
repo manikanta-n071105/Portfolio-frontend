@@ -1,0 +1,22 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--primary-bg);
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--accent-cyan);
+  color: var(--primary-bg);
+}
+
+::-moz-selection {
+  background: var(--accent-cyan);
+  color: var(--primary-bg);
+}
